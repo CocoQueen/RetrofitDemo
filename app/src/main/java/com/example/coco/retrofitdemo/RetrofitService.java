@@ -7,6 +7,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
+import rx.Observable;
 
 
 /**
@@ -22,4 +23,6 @@ public interface RetrofitService {
     Call<WaresBean> getRetrofit3(@Path("type")String type);
     @GET("wares/hot")
     Call<WaresBean> getRetrofit4(@QueryMap()Map<String,String> map);
+    @GET("wares/hot?curPage=0&pageSize=10")
+    Observable<WaresBean>getRetrofit5();
 }
